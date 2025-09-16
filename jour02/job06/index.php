@@ -1,17 +1,13 @@
 <?php
-$hauteur = 5; // Hauteur du triangle
+// Définir les dimensions du rectangle
+$largeur = 20;
+$hauteur = 10;
 
-for ($i = 1; $i <= $hauteur; $i++) {
-    // Afficher les espaces pour centrer le triangle
-    for ($j = 1; $j <= $hauteur - $i; $j++) {
-        echo "&nbsp;&nbsp;";
+// Boucle pour chaque ligne (hauteur)
+for ($i = 0; $i < $hauteur; $i++) {
+    // Boucle pour chaque colonne (largeur)
+    for ($j = 0; $j < $largeur; $j++) {
+        echo "*"; // caractère du rectangle
     }
-
-    // Afficher les étoiles pour cette ligne
-    for ($k = 1; $k <= $i; $k++) {
-        echo "*";
-        if ($k < $i) echo " ";
-    }
-
-    echo "<br />";
+    echo "<br />"; // retour à la ligne après chaque ligne
 }
