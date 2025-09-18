@@ -6,7 +6,7 @@ $str = "I'm sorry Dave I'm afraid I can't do that";
 $vowels = "aeiouAEIOU";
 
 // Parcours de la chaîne
-for ($i = 0; $i < strlen($str); $i++) {
+for ($i = 0; isset($str[$i]); $i++) {
     if (strpos($vowels, $str[$i]) !== false) {
         echo $str[$i];
     }

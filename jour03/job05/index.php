@@ -11,8 +11,8 @@ $dic = [
 // Définition des voyelles (majuscules et minuscules)
 $vowels = "aeiouyAEIOUY";
 
-// Parcours de la chaîne
-for ($i = 0; $i < strlen($str); $i++) {
+// Parcours de la chaîne sans strlen()
+for ($i = 0; isset($str[$i]); $i++) {
     $char = $str[$i];
     if (ctype_alpha($char)) { // Vérifie que c'est une lettre
         if (strpos($vowels, $char) !== false) {
