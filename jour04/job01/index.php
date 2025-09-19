@@ -1,12 +1,13 @@
 <?php
-if (!empty($_GET)) {
+// Vérification et affichage des arguments GET
+if (isset($_GET['prenom']) || isset($_GET['nom'])) {
     echo "Le nombre d’arguments GET envoyés est : " . count($_GET);
 } else {
     echo "Aucun argument GET n’a été envoyé.";
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

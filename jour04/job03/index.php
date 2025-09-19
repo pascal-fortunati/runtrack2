@@ -1,12 +1,13 @@
 <?php
-if (!empty($_POST)) {
+// Vérification et comptage des arguments POST
+if (isset($_POST['prenom']) || isset($_POST['nom'])) {
     echo "Le nombre d’arguments POST envoyés est : " . count($_POST);
 } else {
     echo "Aucun argument POST n’a été envoyé.";
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

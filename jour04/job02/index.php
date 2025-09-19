@@ -1,5 +1,5 @@
 <?php
-if (!empty($_GET)) {
+if (isset($_GET['prenom']) || isset($_GET['nom'])) {
     echo "<table border='1'>
             <tr>
                 <th>Argument</th>
@@ -17,7 +17,7 @@ if (!empty($_GET)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

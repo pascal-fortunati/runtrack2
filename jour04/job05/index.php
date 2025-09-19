@@ -1,12 +1,20 @@
 <?php
+// Vérification des identifiants
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
 
-    if ($username === 'John' && $password === 'Rambo') {
-        echo "C’est pas ma guerre";
+    // Vérifie si les champs existent
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        // Comparaison avec les valeurs attendues
+        if ($username === 'John' && $password === 'Rambo') {
+            echo "C’est pas ma guerre";
+        } else {
+            echo "Votre pire cauchemar";
+        }
     } else {
-        echo "Votre pire cauchemar";
+        echo "Veuillez remplir tous les champs.";
     }
 }
 ?>

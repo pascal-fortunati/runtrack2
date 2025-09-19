@@ -1,10 +1,12 @@
 <?php
+// Vérification et dessin de la maison
 if (isset($_GET['largeur']) && isset($_GET['hauteur'])) {
     $largeur = (int)$_GET['largeur'];
     $hauteur = (int)$_GET['hauteur'];
 
     if ($largeur > 1 && $hauteur > 0) {
         $output = '';
+
         // Calcul du toit (triangle)
         $toitHauteur = ceil($largeur / 2);
         for ($i = 0; $i < $toitHauteur; $i++) {
@@ -18,11 +20,7 @@ if (isset($_GET['largeur']) && isset($_GET['hauteur'])) {
 
         // Corps de la maison
         for ($i = 0; $i < $hauteur; $i++) {
-            if ($largeur == 1) {
-                $output .= "*\n";
-            } else {
-                $output .= '*' . str_repeat(' ', $largeur - 2) . '*' . "\n";
-            }
+            $output .= '*' . str_repeat(' ', max(0, $largeur - 2)) . '*' . "\n";
         }
 
         // Sol de la maison
@@ -33,6 +31,8 @@ if (isset($_GET['largeur']) && isset($_GET['hauteur'])) {
     } else {
         echo "Largeur et hauteur doivent être des nombres positifs (largeur > 1).";
     }
+} else {
+    echo "Veuillez entrer la largeur et la hauteur de la maison.";
 }
 ?>
 

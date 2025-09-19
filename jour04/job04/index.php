@@ -1,5 +1,6 @@
 <?php
-if (!empty($_POST)) {
+// Vérification et affichage des arguments POST
+if (isset($_POST['prenom']) || isset($_POST['nom'])) {
     echo "<table border='1'>
             <tr>
                 <th>Argument</th>
@@ -17,7 +18,7 @@ if (!empty($_POST)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">

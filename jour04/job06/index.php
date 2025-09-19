@@ -1,4 +1,5 @@
 <?php
+// Vérification si le nombre est pair ou impair
 if (isset($_GET['nombre'])) {
     $nombre = $_GET['nombre'];
 
@@ -11,6 +12,8 @@ if (isset($_GET['nombre'])) {
     } else {
         echo "Veuillez entrer un nombre valide.";
     }
+} else {
+    echo "Aucun nombre n’a été envoyé.";
 }
 ?>
 
