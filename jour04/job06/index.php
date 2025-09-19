@@ -1,7 +1,6 @@
 <?php
-// Vérification si le nombre est pair ou impair
-if (isset($_GET['nombre'])) {
-    $nombre = $_GET['nombre'];
+if (isset($_POST['nombre'])) {
+    $nombre = $_POST['nombre'];
 
     if (is_numeric($nombre)) {
         if ($nombre % 2 == 0) {
@@ -12,12 +11,23 @@ if (isset($_GET['nombre'])) {
     } else {
         echo "Veuillez entrer un nombre valide.";
     }
-} else {
-    echo "Aucun nombre n’a été envoyé.";
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<form method="GET" action="">
-    <input type="text" name="nombre" placeholder="Entrez un nombre">
-    <input type="submit" value="Vérifier">
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Job 06</h1>
+    <form method="POST" action="" data-job="job06">
+        <input type="text" name="nombre" placeholder="Entrez un nombre">
+        <input type="submit" value="Vérifier">
+    </form>
+</body>
+
+</html>

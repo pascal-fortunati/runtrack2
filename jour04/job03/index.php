@@ -16,7 +16,8 @@ if (isset($_POST['prenom']) || isset($_POST['nom'])) {
 </head>
 
 <body>
-    <form method="POST" action="">
+    <h1>Job 03</h1>
+    <form method="POST" action="" data-job="job03">
         <input type="text" name="prenom" placeholder="Prénom">
         <input type="text" name="nom" placeholder="Nom">
         <input type="submit" value="Envoyer">

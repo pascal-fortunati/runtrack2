@@ -1,12 +1,10 @@
 <?php
-// Vérification et dessin de la maison
-if (isset($_GET['largeur']) && isset($_GET['hauteur'])) {
-    $largeur = (int)$_GET['largeur'];
-    $hauteur = (int)$_GET['hauteur'];
+if (isset($_POST['largeur']) && isset($_POST['hauteur'])) {
+    $largeur = (int)$_POST['largeur'];
+    $hauteur = (int)$_POST['hauteur'];
 
     if ($largeur > 1 && $hauteur > 0) {
         $output = '';
-
         // Calcul du toit (triangle)
         $toitHauteur = ceil($largeur / 2);
         for ($i = 0; $i < $toitHauteur; $i++) {
@@ -20,7 +18,11 @@ if (isset($_GET['largeur']) && isset($_GET['hauteur'])) {
 
         // Corps de la maison
         for ($i = 0; $i < $hauteur; $i++) {
-            $output .= '*' . str_repeat(' ', max(0, $largeur - 2)) . '*' . "\n";
+            if ($largeur == 1) {
+                $output .= "*\n";
+            } else {
+                $output .= '*' . str_repeat(' ', $largeur - 2) . '*' . "\n";
+            }
         }
 
         // Sol de la maison
@@ -31,13 +33,24 @@ if (isset($_GET['largeur']) && isset($_GET['hauteur'])) {
     } else {
         echo "Largeur et hauteur doivent être des nombres positifs (largeur > 1).";
     }
-} else {
-    echo "Veuillez entrer la largeur et la hauteur de la maison.";
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<form method="GET" action="">
-    <input type="text" name="largeur" placeholder="Largeur">
-    <input type="text" name="hauteur" placeholder="Hauteur">
-    <input type="submit" value="Dessiner la maison">
-</form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Job 07</h1>
+    <form method="POST" action="" data-job="job07">
+        <input type="text" name="largeur" placeholder="Largeur">
+        <input type="text" name="hauteur" placeholder="Hauteur">
+        <input type="submit" value="Dessiner la maison">
+    </form>
+</body>
+
+</html>

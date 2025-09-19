@@ -1,9 +1,9 @@
 <?php
 // Vérification et affichage des arguments GET
-if (isset($_GET['prenom']) || isset($_GET['nom'])) {
-    echo "Le nombre d’arguments GET envoyés est : " . count($_GET);
+if (isset($_POST['prenom']) || isset($_POST['nom'])) {
+    echo "Le nombre d’arguments POST envoyés est : " . count($_POST);
 } else {
-    echo "Aucun argument GET n’a été envoyé.";
+    echo "Aucun argument POST n’a été envoyé.";
 }
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,8 @@ if (isset($_GET['prenom']) || isset($_GET['nom'])) {
 </head>
 
 <body>
-    <form method="GET" action="">
+    <h1>Job 01</h1>
+    <form method="POST" action="" data-job="job01">
         <input type="text" name="prenom" placeholder="Prénom">
         <input type="text" name="nom" placeholder="Nom">
         <input type="submit" value="Envoyer">

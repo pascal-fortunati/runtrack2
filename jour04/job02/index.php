@@ -1,11 +1,11 @@
 <?php
-if (isset($_GET['prenom']) || isset($_GET['nom'])) {
+if (isset($_POST['prenom']) || isset($_POST['nom'])) {
     echo "<table border='1'>
             <tr>
                 <th>Argument</th>
                 <th>Valeur</th>
             </tr>";
-    foreach ($_GET as $key => $value) {
+    foreach ($_POST as $key => $value) {
         echo "<tr>
                 <td>" . htmlspecialchars($key) . "</td>
                 <td>" . htmlspecialchars($value) . "</td>
@@ -26,7 +26,8 @@ if (isset($_GET['prenom']) || isset($_GET['nom'])) {
 </head>
 
 <body>
-    <form method="GET" action="">
+    <h1>Job 02</h1>
+    <form method="POST" action="" data-job="job02">
         <input type="text" name="prenom" placeholder="Prénom">
         <input type="text" name="nom" placeholder="Nom">
         <input type="submit" value="Envoyer">
